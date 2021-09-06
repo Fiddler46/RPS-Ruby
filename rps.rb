@@ -15,3 +15,8 @@ class RPS
             "Paper" => ["Rock"],
             "Scissors" => ["Paper"]
         }
+    def sys_guess
+        srand (@random || rand_algo)
+        sys_guesses = %w{Rock Paper Scissors}
+        sys_guesses.sample
+    end
