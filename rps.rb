@@ -1,5 +1,4 @@
 class RPS
-    attr_writer :seed   
 
     def initialize(guess:)  
         @guess = guess.capitalise
@@ -18,7 +17,7 @@ class RPS
     end
 
     def sys_guess
-        srand (@random || rand_algo)
+        srand rand_algo
         sys_guesses = %w{Rock Paper Scissors}
         sys_guesses.sample
     end
