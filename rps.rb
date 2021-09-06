@@ -8,3 +8,10 @@ class RPS
     def rand_algo
         rand 12345
     end
+
+    def rule_engine
+        {
+            "Rock" => ["Scissors"],
+            "Paper" => ["Rock"],
+            "Scissors" => ["Paper"]
+        }
