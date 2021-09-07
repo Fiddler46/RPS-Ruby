@@ -1,33 +1,36 @@
 class RPS
 
     def initialize(guess:)  
-        @guess = guess.capitalise
+        @guess = guess.capitalize
     end        
-
-    def rand_algo   
-        rand 12345
-    end
 
     def rule_engine 
         {
-            "Rock" => ["Scissors"],
-            "Paper" => ["Rock"],
-            "Scissors" => ["Paper"]
+            'Rock': ['Scissors'],
+            'Paper': ['Rock'],
+            'Scissors': ['Paper']
         }
     end
 
     def sys_guess
-        srand rand_algo
+        rand 12345
         sys_guesses = %w{Rock Paper Scissors}
         sys_guesses.sample
     end
 
-    def winner_is
-        if rule_engine [sys_guess].include? @guess
-          'Computer wins'
-        elsif rule_engine[@guess].include? sys_guess
-          'You win!'
-        else
-          'Tie'
-        end
+    def winner_is 
+         puts sys_guess.to_s
+         puts @guess.to_s
+
+        if rule_engine[sys_guess].include? @guess
+           puts "Computer wins"
+         elsif rule_engine[@guess].include? sys_guess
+           puts "You win!"
+         else
+           puts "Tie"
+         end
     end
+end
+
+rps = RPS.new(guess: gets)
+rps.winner_is
