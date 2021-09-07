@@ -39,5 +39,5 @@ class RPS
 end
 
 rps = RPS.new(guess: gets.chomp!)
-rps.seed = 3
+#rps.seed = 3
 rps.winner_is
