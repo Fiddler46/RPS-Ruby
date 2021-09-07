@@ -28,7 +28,7 @@ class RPS
       puts "Computer guessed #{sys_guess.to_s}"
          
 
-      if rule_engine[sys_guess].include? @guess
+      if rule_engine[sys_guess.to_s].include? @guess
          puts "Computer wins"
       elsif rule_engine[@guess].include? sys_guess
          puts "You win!"
@@ -39,5 +39,5 @@ class RPS
 end
 
 rps = RPS.new(guess: gets.chomp!)
-#rps.seed = 1
+rps.seed = 3
 rps.winner_is
